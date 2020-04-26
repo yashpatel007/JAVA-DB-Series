@@ -17,11 +17,11 @@ import java.util.logging.Logger;
  *
  * @author Yash Patel
  */
-public class DBConnector {
+public class DBConnector{
     
      private static Connection myconn = null;
     
-    public static Connection makeJDBCConnection() {
+    public static synchronized Connection makeJDBCConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("Ok  you have JDBC driver registered");
@@ -36,7 +36,7 @@ public class DBConnector {
                         
 			myconn = DriverManager.getConnection("jdbc:mysql://db4free.net:3306/yashdatabase", passwordManager.getUsername(),passwordManager.getPassword());
 			if (myconn != null) {
-				System.out.println("Connection Successful! Enjoy. Now it's time to push data");
+				System.out.println("Connection Successful! Enjoy.");
                                 return myconn;
 			} else {
 				System.out.println("Failed to make connection!");
@@ -52,6 +52,9 @@ public class DBConnector {
     public void closeConnection() throws SQLException{
              myconn.close();
     }
+
+    
+   
     
 
     

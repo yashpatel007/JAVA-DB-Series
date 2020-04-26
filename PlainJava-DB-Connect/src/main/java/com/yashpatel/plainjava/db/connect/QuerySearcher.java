@@ -16,13 +16,16 @@ import java.util.ArrayList;
  *
  * @author Yash Patel
  */
-public class QuerySearcher extends Main {
+public class QuerySearcher{
     private static DBConnector dBConnector = new DBConnector();
     static PreparedStatement mystat = null;
     Connection connection = dBConnector.makeJDBCConnection();
+    
     public ArrayList<Todo> searchQuery(String query){
+        
         ArrayList<Todo> resultList = new ArrayList<Todo>();
-        try {   
+        try {           
+            
 			mystat = connection.prepareStatement(query);
  
 			// Execute the Query, and get a java ResultSet
@@ -59,6 +62,7 @@ public class QuerySearcher extends Main {
  
 		SQLException e) {
 			e.printStackTrace();
+                        
 		}
         
         return resultList;
@@ -84,22 +88,7 @@ public class QuerySearcher extends Main {
                 return false;
     }
     
-    
-    public void geById(){
-    
-    }
-    
-    public void getByTaskName(){
-    
-    }
-    
-    public void getCompleted(){
-    
-    }
-    
-    public void getUncompleted(){
-    
-    }
+   
     
     
 }
