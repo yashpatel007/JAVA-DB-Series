@@ -391,7 +391,6 @@ public class Main extends javax.swing.JFrame {
             resultText.append(item.toString()+"\n");
         }
         
-        
     }
     
     /**
