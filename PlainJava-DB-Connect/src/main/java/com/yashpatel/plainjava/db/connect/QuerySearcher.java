@@ -35,7 +35,7 @@ public class QuerySearcher extends Main {
                                 Todo currtodo = new Todo();
                                 currtodo.setTitle(rs.getString("title"));
                                 currtodo.setDescription(rs.getString("description"));
-                                currtodo.setStatus(0);
+                                currtodo.setStatus(rs.getInt("status"));
                                 currtodo.setId(rs.getInt("id"));
                                 resultList.add(currtodo);
                                 
@@ -50,7 +50,7 @@ public class QuerySearcher extends Main {
 				System.out.format("%d, %s, %s, %d\n", id, title, description, status);
 			}
                         
-                        super.setResultText(resultList);
+                        //super.setResultText(resultList);
                         // not really advisable
                         mystat.close();
                         //dBConnector.closeConnection();

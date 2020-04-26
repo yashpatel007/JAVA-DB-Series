@@ -92,6 +92,11 @@ public class Main extends javax.swing.JFrame {
         getUnCompleted.setText("Get UnCompleted");
         getUnCompleted.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         getUnCompleted.setContentAreaFilled(false);
+        getUnCompleted.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                getUnCompletedActionPerformed(evt);
+            }
+        });
 
         searchQuery.setBackground(new java.awt.Color(0, 153, 0));
         searchQuery.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -291,6 +296,9 @@ public class Main extends javax.swing.JFrame {
 
     private void getAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getAllActionPerformed
         // TODO add your handling code here:
+          String queryText = "SELECT * FROM todo";
+          ArrayList<Todo> res = querySearcher.searchQuery(queryText);
+         setResultText(res);
     }//GEN-LAST:event_getAllActionPerformed
 
     private void inputTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTitleActionPerformed
@@ -331,11 +339,28 @@ public class Main extends javax.swing.JFrame {
     private void getCompletedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getCompletedActionPerformed
         // TODO add your handling code here:
         int status=1;
-        querySearcher.searchQuery("SELECT * FROM todo WHERE status="+status);
+        ArrayList<Todo> res = querySearcher.searchQuery("SELECT * FROM todo WHERE status="+status);
+        setResultText(res);
+        
+        
     }//GEN-LAST:event_getCompletedActionPerformed
+
+    private void getUnCompletedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getUnCompletedActionPerformed
+        
+        int status=0;
+        ArrayList<Todo> res = querySearcher.searchQuery("SELECT * FROM todo WHERE status="+status);
+        setResultText(res);
+        
+        
+    }//GEN-LAST:event_getUnCompletedActionPerformed
 
     public void setResultText(ArrayList<Todo> res){
         resultText.setText("");
+        if(res.size()==0){
+            resultText.setText("No records found") ;
+        }
+        
+        
         for(Todo item : res){
             resultText.append(item.toString()+"\n");
         }
