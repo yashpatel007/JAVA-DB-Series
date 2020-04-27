@@ -5,11 +5,16 @@ The projects focus on Implementing JDBC connection with Plain Java and Making an
 ## [SQL Script](https://github.com/yashpatel007/JAVA-DB-Series/tree/master/SQL%20script)
 This Contains a basic SQl Script to create table Todo and insert few records into it, if you wish to work with your own datbase,
 please copy the schema or run the **todo.sql** file to create table and insert records. To run the sql using cmd, navigate to the
-folder containing todo.sql and type following command
+folder containing todo.sql and type following command, this will create the table and insert few dummy records.
     
 ```cmd
 >>> <your sql cmd tool> todo.sql
 ```
+Query the DB with basic queries listed in [query.sql](https://github.com/yashpatel007/JAVA-DB-Series/blob/master/SQL%20script/query.sql)
+```cmd
+>>> <your sql cmd tool> query.sql
+```
+
 
 ## [Make Java Database Connection](https://github.com/yashpatel007/JAVA-DB-Series/tree/master/PlainJava-DB-Connect)
 This project use maven for dependency management, so you do not need to worry about driver downdolad and compatiblity,
