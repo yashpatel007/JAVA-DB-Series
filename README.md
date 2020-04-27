@@ -55,4 +55,4 @@ This project Uses Spring Boot and Spring Framework to create a REST API, Databas
     * ##### Delete by Status
         * [localhost:8080/todo/status/{status}](http://localhost/todo/status/1) delete all the completed task
         
-**Note :** Because this an In-Memory Database any operations will not be permanent and any changes will be erases as soon as you shutdown spring server.  
+**Note :** Because this an In-Memory Database any operations will not be permanent and any changes will be erased as soon as you shutdown spring server.  
