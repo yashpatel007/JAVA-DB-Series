@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.yashapi.SpringAPI.SpringApiApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.842 s - in com.yashapi.SpringAPI.SpringApiApplicationTests
