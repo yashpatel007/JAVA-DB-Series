@@ -37,12 +37,22 @@ This project Uses Spring Boot and Spring Framework to create a REST API, Databas
     ```
 * #### API Details
     * API Can be tested either by Browser( make sure you have [Json Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=en-US) chrome extension ) or POSTMAN 
-
-
-
-
+    { I recommend using postman because it is a powerful tool and can generate all queries without any error. }
+    * ##### GET All Records
+        * [localhost:8080/todo](http://localhost:8080/todo), gets all records in the table
+    * ##### GET By Id
+        * [localhost:8080/todo/{id}](http://localhost:8080/todo/1), get todo record by id
+    * ##### GET By Title
+        * [localhost:8080/todo/title/{title}](http://localhost:8080/todo/title/Helloworld), get record with title Hello world
+    * ##### GET By status (Completed --> 1, Incomplete --> 0 )
+        * [localhost:8080/todo/status/{status}](http://localhost:8080/todo/status/0), get all incompleted tasks.
+    * ##### POST 
+        * [localhost:8080/todo](http://localhost:8080/todo), Insert new record, please make sure all fields are set correctly    
+    * ##### PUT in Id
+        * [localhost:8080/todo/{id}](http://localhost/todo/1), Update Id 1 please make sure all fields are set correctly
+    * ##### Delete by ID
+        * [localhost:8080/todo/{id}](http://localhost/todo/1) delete task with id 1
+    * ##### Delete by Status
+        * [localhost:8080/todo/status/{status}](http://localhost/todo/status/1) delete all the completed task
+        
 **Note :** Because this an In-Memory Database any operations will not be permanent and any changes will be erases as soon as you shutdown spring server.  
-
- 
- 
- 
