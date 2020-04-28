@@ -60,4 +60,9 @@ This project Uses Spring Boot and Spring Framework to create a REST API, Databas
     * ##### Delete by Status
         * [localhost:8080/todo/status/{status}](http://localhost/todo/status/1) delete all the completed task
         
-**Note :** Because this an In-Memory Database any operations will not be permanent and any changes will be erased as soon as you shutdown spring server.  
+**Note :** Because this an In-Memory Database any operations will not be permanent and any changes will be erased as soon as you shutdown spring server. 
+
+## [QuickAPI-Spring](https://github.com/yashpatel007/JAVA-DB-Series/tree/master/QuickAPI)
+This is a very simple implementation of REST Api which supports only GET, POST, DELETE this is By Annotationg Spring data repository as 
+[@RepositoryRestResource](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#reference) which takes care of all GET POST, DELETE request.
+
